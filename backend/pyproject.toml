@@ -1,0 +1,22 @@
+[project]
+name = "strockly-backend"
+version = "0.1.0"
+description = "A simple backend for a inventory management system"
+authors = [
+    {name = "Juan Esteban Medina",email = "jumedinaca@unal.edu.co"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi (>=0.136.1,<0.137.0)",
+    "uvicorn (>=0.47.0,<0.48.0)",
+    "sqlalchemy (>=2.0.49,<3.0.0)",
+    "pydantic (>=2.13.4,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "strockly_backend", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
