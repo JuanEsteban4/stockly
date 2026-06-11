@@ -1,1 +1,2 @@
 from .producto_repository import ProductoRepository
+from .categoria_repository import CategoriaRepository

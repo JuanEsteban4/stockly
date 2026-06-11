@@ -1,8 +1,9 @@
 from fastapi import FastAPI
 
 from app.core.database import Base, engine
-from app.models import producto
-from app.api.routes import productos
+import app.models
+
+from app.api.routes import routers
 
 app = FastAPI(title="Stockly API")
 
@@ -10,7 +11,8 @@ app = FastAPI(title="Stockly API")
 Base.metadata.create_all(bind=engine)
 
 #Add the routes 
-app.include_router(productos.router)
+for router in routers:
+    app.include_router(router)
 #Then we add the missing ones
 
 @app.get("/")
