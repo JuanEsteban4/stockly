@@ -22,3 +22,9 @@ class ProductoRepository:
         return db.query(Producto).filter(
             Producto.nombre.ilike(f"%{name}%")
         ).all()
+    
+    @staticmethod
+    def get_by_sku(db: Session, sku:str) -> Producto:
+        return db.query(Producto).filter(
+            Producto.sku.like(sku)
+        ).first()

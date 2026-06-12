@@ -16,3 +16,7 @@ class ProductoService:
     @staticmethod
     def listar_productos_por_nombre(db: Session, name: str) -> list[Producto]:
         return ProductoRepository.get_by_name(db, name)
+    
+    @staticmethod
+    def obtener_productos_por_sku(db: Session, sku: str)-> Producto:
+        return ProductoRepository.get_by_sku(db, sku)
